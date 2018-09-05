@@ -173,6 +173,7 @@ public class EntityDummy extends EntityLiving implements IEntityAdditionalSpawnD
       }
     }
 
+    if (!net.minecraftforge.common.ForgeHooks.onLivingAttack(this, source, damage)) return false;
 
     if((float) this.hurtResistantTime > (float) this.maxHurtResistantTime / 2.0F) {
       if(damage <= this.lastDamage) {
